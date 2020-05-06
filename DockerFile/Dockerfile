@@ -50,7 +50,7 @@ RUN export JAVA_HOME
 
 # Install needed dependencies 
 RUN apt-get update && \
-apt-get install -y git && \
+    apt-get install -y git && \
     apt-get install -y vim && \
     apt-get install -y wget && \
     apt-get install -y python3-pip && \
@@ -60,6 +60,16 @@ apt-get install -y git && \
     apt-get clean && \
     echo "alias python3.3='/usr/bin/python3'" >> /root/.bashrc && \
     echo "machine git.csez.zohocorpin.com\nlogin manikandan.pk\npassword Mani@321" >> ~/.netrc
+    
+# Install newman
+RUN apt-get update -qq && apt-get install -y -qq curl && \
+    curl -sL https://deb.nodesource.com/setup_10.x | bash - && \
+    apt-get install -y nodejs && \
+    apt-get install -y npm && \
+    #npm config set proxy http://192.168.100.100:3128/ && \
+    npm config set https-proxy http://192.168.100.100:3128/ && \
+    npm install newman -g;
+    
 ENV http_proxy=
 
 # Add ANT related dependencies
