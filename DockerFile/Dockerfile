@@ -58,8 +58,7 @@ RUN apt-get update && \
     apt-get install -y zip && \
     apt-get install lsof && \
     apt-get clean && \
-    echo "alias python3.3='/usr/bin/python3'" >> /root/.bashrc && \
-    echo "machine git.csez.zohocorpin.com\nlogin manikandan.pk\npassword Mani@321" >> ~/.netrc
+    echo "alias python3.3='/usr/bin/python3'" >> /root/.bashrc;
     
 # Install newman
 RUN apt-get update -qq && apt-get install -y -qq curl && \
