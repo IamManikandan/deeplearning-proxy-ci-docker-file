@@ -3,7 +3,7 @@ FROM ubuntu
 # Set Proxy
 ENV http_proxy http://192.168.100.100:3128/
 
-RUN apt-get update && apt-get install gcc zlib1g-dev libreadline6-dev apt-utils make -y
+RUN apt-get update && apt-get install gcc zlib1g-dev libreadline6-dev apt-utils make jq -y
 
 RUN mkdir -p /tmp/downloads
 
