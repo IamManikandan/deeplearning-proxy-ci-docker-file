@@ -1,7 +1,7 @@
 FROM ubuntu
 
 # Set Proxy
-ENV http_proxy http://192.168.100.100:3128/
+# ENV http_proxy http://192.168.100.100:3128/
 
 RUN apt-get update && apt-get install gcc zlib1g-dev libreadline6-dev apt-utils make jq -y
 
@@ -66,13 +66,13 @@ RUN apt-get update -qq && apt-get install -y -qq curl && \
     apt-get install -y nodejs && \
     apt-get install -y npm && \
     #npm config set proxy http://192.168.100.100:3128/ && \
-    npm config set https-proxy http://192.168.100.100:3128/ && \
+    #npm config set https-proxy http://192.168.100.100:3128/ && \
     npm install newman -g;
     
-ENV http_proxy=
+# ENV http_proxy=
 
 # Add ANT related dependencies
-ADD http://cm-server/thirdparty_downloads/ant-contrib/ant-contrib-1.0b1.jar /usr/share/ant/lib/
-ADD http://cm-server/thirdparty_downloads/ant/apache-ant-1.9.6.zip /usr/lib/
-ENV ANT_HOME=/usr/lib/apache-ant-1.9.6.zip
-ENV JAVA_TOOL_OPTIONS=-Dfile.encoding=UTF-8
+# ADD http://cm-server/thirdparty_downloads/ant-contrib/ant-contrib-1.0b1.jar /usr/share/ant/lib/
+# ADD http://cm-server/thirdparty_downloads/ant/apache-ant-1.9.6.zip /usr/lib/
+# ENV ANT_HOME=/usr/lib/apache-ant-1.9.6.zip
+# ENV JAVA_TOOL_OPTIONS=-Dfile.encoding=UTF-8
