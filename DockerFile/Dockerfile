@@ -75,4 +75,4 @@ ENV http_proxy=
 ADD http://cm-server/thirdparty_downloads/ant-contrib/ant-contrib-1.0b1.jar /usr/share/ant/lib/
 ADD http://cm-server/thirdparty_downloads/ant/apache-ant-1.9.6.zip /usr/lib/
 ENV ANT_HOME=/usr/lib/apache-ant-1.9.6.zip
-ENV JAVA_TOOL_OPTIONS=-Dfile.encoding=UTF-8                                                                                                                                                                                     1,1           Top
+ENV JAVA_TOOL_OPTIONS=-Dfile.encoding=UTF-8
