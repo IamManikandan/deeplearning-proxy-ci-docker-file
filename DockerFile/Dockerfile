@@ -61,12 +61,8 @@ RUN apt-get update && \
     echo "alias python3.3='/usr/bin/python3'" >> /root/.bashrc;
     
 # Install newman
-RUN apt-get update -qq && apt-get install -y -qq curl && \
-    curl -sL https://deb.nodesource.com/setup_10.x | bash - && \
-    apt-get install -y nodejs && \
-    apt-get install -y npm && \
-    #npm config set proxy http://192.168.100.100:3128/ && \
-    #npm config set https-proxy http://192.168.100.100:3128/ && \
+RUN apt-get install aptitude -y && \
+    aptitude install npm -y && \
     npm install newman -g;
     
 # ENV http_proxy=
